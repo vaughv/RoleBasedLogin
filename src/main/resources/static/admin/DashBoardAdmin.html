@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header and Footer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bytesized&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    
+    <style>
+
+        * {
+            font-family: tektur, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img:hover{
+            cursor: pointer;
+            box-shadow: 0 0 20px #E3B23C, 0 0 30px #36A5A5;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            filter: drop-shadow(0 0 10px #E3B23C);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #E3B23C;
+        }
+
+        .header-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-options ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header-options ul li {
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .header-options ul li a {
+            color: #F3E9DC;
+            text-decoration: none;
+        }
+        .header-options ul li:hover {
+            font-size: 22px;
+        }
+        .header-options ul li:hover a {
+            color: #E3B23C;
+        }
+
+        .tektur-<uniquifier> {
+            font-family: "Tektur", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+            font-variation-settings:
+            "wdth" 100;
+        }
+
+        footer {
+            margin-top: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .footer-content {
+            text-align: center;
+            font-size: 20px;
+            color: #F3E9DC;
+        }
+
+       .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+       .footer-links img {
+            margin: 0 10px;
+            cursor: pointer;
+            width: 80px;
+            height: 70px;
+       }
+
+       .footer-links img:hover {
+            filter: drop-shadow(0 0 10px #E3B23C);
+       }
+
+       /* css fo full site*/
+
+       body {
+            text-align: center;
+            background:#36332d;
+            margin: 0;
+            padding: 20px;
+        }
+
+        p {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            background: url('https://www.shutterstock.com/shutterstock/photos/2150378505/display_1500/stock-vector-multi-layers-color-texture-d-papercut-layers-in-gradient-vector-banner-carving-art-cover-layout-2150378505.jpg');
+            background-size: cover;
+            background-clip: text;
+            color: transparent;
+            animation: animate 3s linear infinite;
+            font-weight: bold;
+        }
+
+        @keyframes animate {
+            to {
+                background-position-x: -800px;
+            }
+            
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .user-manage {
+            width: 250px;
+            height: 200px;
+            border: 3px solid black;
+            background: rgba(193, 255, 24, 0.253);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .user-manage:hover {
+            transform: scale(1.10);
+            box-shadow: 0 0 10px rgb(0, 255, 106);
+            background-color: #E3B23C;
+            cursor: pointer;
+        }
+
+        .user-manage a {
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .user-manage img {
+            width: 100px;
+            height: 100px;
+        }
+
+        a {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #E3B23C;
+            
+        }
+
+        .report:hover {
+            cursor: pointer;
+            box-shadow: 0 0 10px rgb(0, 255, 106);
+            color: red;
+        }
+
+        #logoutBtn {
+            padding: 8px 12px;
+            border: none;
+            background: linear-gradient(90deg, #36A5A5, #E3B23C);
+            color: white;
+            box-shadow: #36A5A5 2px 2px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        #logoutBtn:hover {
+            background: linear-gradient(90deg, #E3B23C, #36A5A5);
+            box-shadow: #E3B23C 2px 2px 5px;
+            filter: drop-shadow(0 0 10px #E3B23C);
+        }
+
+    </style>
+</head>
+
+<header>
+    <div class="logo">
+        <img src="img/image.png" alt="SkillHive Logo">
+        <div class="logo-text" href="#">SKILLHIVE</div>
+    </div>
+    <nav class="header-options">
+        <ul>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About</a></li>
+            <li><button id="logoutBtn">Logout</button></li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <p>Welcome ADMIN</p>
+    <main>
+        <div class="user-manage">
+            <a>User Management</a>
+            <img src="https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-user-profile-avatar-png-image_10211467.png" alt="User">
+        </div>
+        <div class="user-manage">
+            <a>Courses Management</a>
+            <img src="https://cdn-icons-png.flaticon.com/512/3482/3482505.png" alt="Courses">
+        </div>
+    </main>
+    <a  class="report">Check Reports&#128128</a>
+    <script>
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            // Clear token from localStorage or sessionStorage
+            localStorage.removeItem("token");  // or sessionStorage.removeItem("token")
+
+            // Redirect to login page
+            window.location.href = "../auth/login.html";  // or whatever your login page is
+        });
+    </script>
+
+</body>
+
+<footer>
+    <div class="footer-content">
+        Copyrights &copy; 2024, All Rights Reserved
+    </div>
+    <div class="footer-links">
+        <a>  <img src="https://img.icons8.com/?size=100&id=cHNRcWMI2bLJ&format=png&color=000000" alt="mail"> </a>
+        <a> <img src="https://img.icons8.com/?size=100&id=CVI48dqUAQYO&format=png&color=000000" alt="whatsapp"> </a> 
+        <a> <img src="https://img.icons8.com/?size=100&id=80593&format=png&color=000000" alt="instagram"> </a>
+    </div>
+</footer>

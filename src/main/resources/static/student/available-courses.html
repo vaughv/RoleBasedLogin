@@ -1,0 +1,288 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bytesized&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+
+        * {
+            font-family: tektur, sans-serif;
+        }
+
+        body {
+            background: fixed #202929;
+        }
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img:hover{
+            cursor: pointer;
+            box-shadow: 0 0 20px #E3B23C, 0 0 30px #36A5A5;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            filter: drop-shadow(0 0 10px #E3B23C);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #E3B23C;
+        }
+
+        .header-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-options ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header-options ul li {
+            margin: 0 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .header-options ul li a {
+            color: #F3E9DC;
+            text-decoration: none;
+        }
+        .header-options ul li:hover {
+            font-size: 22px;
+        }
+        .header-options ul li:hover a {
+            color: #E3B23C;
+        }
+
+        .tektur-<uniquifier> {
+            font-family: "Tektur", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+            font-variation-settings:
+            "wdth" 100;
+        }
+
+        footer {
+            margin-top: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .footer-content {
+            text-align: center;
+            font-size: 20px;
+            color: #F3E9DC;
+        }
+
+       .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+       .footer-links img {
+            margin: 0 10px;
+            cursor: pointer;
+            width: 80px;
+            height: 70px;
+       }
+
+       .footer-links img:hover {
+            filter: drop-shadow(0 0 10px #E3B23C);
+       }
+
+       /*other css*/
+
+       .container {
+            width: 80%;
+            margin: auto;
+            color: #E3B23C;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .grid {
+            display: flex;
+            gap: 15px;
+            max-width: 100%; 
+            overflow: hidden;
+        }
+        .box {
+            width: 120px;
+            height: 120px;
+            background-color: #202929;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .box:hover {
+            transform: scale(1.10);
+            
+        }
+
+        .box img {
+            height: 100px;
+            width: 100px;
+            background: #202929;
+        }
+
+        .box img:hover {
+            box-shadow: 0 0 10px rgb(0, 255, 106);
+            
+        }
+
+
+        .carousal {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .Larrows {
+            position: absolute;
+            top: 0%;
+            transform: translate(-50%);
+            width: 25px;
+            height: 100px;
+            border: #6d7a31 2px solid;
+            background-color: #1f3b3b;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: -30px; 
+        }
+        .Larrows:hover {
+            box-shadow: 0 0 10px rgb(0, 255, 106);
+        }
+        
+
+    </style>
+    
+</head>
+<header>
+    <div class="logo">
+        <img src="img/image.png" alt="SkillHive Logo">
+        <div class="logo-text" href="#">SKILLHIVE</div>
+    </div>
+    <nav class="header-options">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    
+    <div class="container">
+        <div class="section">
+            <div class="title">Web Development</div>
+            <div class="carousal">
+                
+            <div class="grid">
+                <a class="box" title="HTML"><img src="https://img.icons8.com/?size=100&id=46605&format=png&color=000000" alt="HTML" /></a>
+                <a class="box" title="css"><img src="https://img.icons8.com/?size=100&id=107497&format=png&color=000000" alt="CSS" /></a>
+                <a class="box" title="Bootstrap"><img src="https://img.icons8.com/?size=100&id=8qe4kHOnabMF&format=png&color=000000" alt="bootstrap" /></a>
+                <a class="box" title="jQuery"><img src="https://img.icons8.com/?size=100&id=NJR55UvSugPN&format=png&color=000000" alt="jQuery" /></a>
+                <a class="box" title="MaterialUI"><img src="https://img.icons8.com/?size=100&id=gFw7X5Tbl3ss&format=png&color=000000" alt="materialUI" /></a>
+            </div>
+            <div class="Larrows"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMxJREFUSEvtlLEKAjEMhr97C/HVXMTBw0FwFR/CzUVv0QdVAj2JmqQtXgfBbuVP/69J2nQ0Xl1jf/6AbIW9Eu2BObA1HCLtI9wCHIFdijwDa3Uq0sxsLMAJ2KhoDYm0YoAETgaJnukArJxMIu0lkwgg2sWA9MnB0+6akPtoot+AhTp0BZZp72lPSAng/aYa4GlFAKtEVeaSZW2Tpf5yO6vJo1bU5KbPdDJzr0TNR4WAD8DMGXaRVjTssiO4JiD3D2q8qobd18ajwe9n8AB51zoZWvdrSAAAAABJRU5ErkJggg=="/></div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="title">Graphic Design</div>
+            <div class="carousal">
+                
+            <div class="grid">
+                <a class="box" title="Adobe"><img src="https://img.icons8.com/?size=100&id=PKQUMGZF1SKL&format=png&color=000000" alt="Adobe" /></a>
+                <a class="box" title="Figma"><img src="https://img.icons8.com/?size=100&id=3nPo8aR8zRCY&format=png&color=000000" alt="Figma" /></a>
+                <a class="box" title="Canva"><img src="https://img.icons8.com/?size=100&id=iWw83PVcBpLw&format=png&color=000000" alt="Canva" /></a>
+                <a class="box" title="Gimp"><img src="https://img.icons8.com/?size=100&id=omuSvqfyybfC&format=png&color=000000" alt="Gimp" /></a>
+                <a class="box" title="Basics of Graphic Design"><img src="https://img.icons8.com/?size=100&id=65314&format=png&color=000000" alt="Basics of Graphic Design" /></a>
+            </div>
+            <div class="Larrows"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMxJREFUSEvtlLEKAjEMhr97C/HVXMTBw0FwFR/CzUVv0QdVAj2JmqQtXgfBbuVP/69J2nQ0Xl1jf/6AbIW9Eu2BObA1HCLtI9wCHIFdijwDa3Uq0sxsLMAJ2KhoDYm0YoAETgaJnukArJxMIu0lkwgg2sWA9MnB0+6akPtoot+AhTp0BZZp72lPSAng/aYa4GlFAKtEVeaSZW2Tpf5yO6vJo1bU5KbPdDJzr0TNR4WAD8DMGXaRVjTssiO4JiD3D2q8qobd18ajwe9n8AB51zoZWvdrSAAAAABJRU5ErkJggg=="/></div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="title">Business</div>
+            <div class="carousal">
+                
+            <div class="grid">
+                <a class="box" title="Basics of Capitalism"><img src="https://img.icons8.com/?size=100&id=j4KfmHyoPybX&format=png&color=000000" alt="Basics of Capitalism" /></a>
+                <a class="box" title="Enterpreunership 101"><img src="https://img.icons8.com/?size=100&id=ZI4DDlPNgG82&format=png&color=000000" alt="Enterpreunership 101" /></a>
+                <a class="box" title="Digital Marketing"><img src="https://img.icons8.com/?size=100&id=gwrZ0uDVPabM&format=png&color=000000" alt="Digital Marketing" /></a>
+                <a class="box" title="Communication skills"><img src="https://img.icons8.com/?size=100&id=117509&format=png&color=000000" alt="Communication skills" /></a>
+                <a class="box" title="DropShipping"><img src="https://img.icons8.com/?size=100&id=i2dtbhxKf5Cx&format=png&color=000000" alt="DropShipping" /></a>
+            </div>
+            <div class="Larrows"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMxJREFUSEvtlLEKAjEMhr97C/HVXMTBw0FwFR/CzUVv0QdVAj2JmqQtXgfBbuVP/69J2nQ0Xl1jf/6AbIW9Eu2BObA1HCLtI9wCHIFdijwDa3Uq0sxsLMAJ2KhoDYm0YoAETgaJnukArJxMIu0lkwgg2sWA9MnB0+6akPtoot+AhTp0BZZp72lPSAng/aYa4GlFAKtEVeaSZW2Tpf5yO6vJo1bU5KbPdDJzr0TNR4WAD8DMGXaRVjTssiO4JiD3D2q8qobd18ajwe9n8AB51zoZWvdrSAAAAABJRU5ErkJggg=="/></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".section").forEach(section => {
+        const grid = section.querySelector(".grid");
+        const arrow = section.querySelector(".Larrows");
+
+        arrow.addEventListener("click", function () {
+            const boxes = grid.querySelectorAll(".box");
+            if (boxes.length > 1) {
+                grid.prepend(boxes[boxes.length - 1]);
+            }
+        });
+    });
+});
+
+
+
+    </script>
+</body>
+
+<footer>
+    <div class="footer-content">
+        Copyrights &copy; 2024, All Rights Reserved
+    </div>
+    <div class="footer-links">
+        <a>  <img src="https://img.icons8.com/?size=100&id=cHNRcWMI2bLJ&format=png&color=000000" alt="mail"> </a>
+        <a> <img src="https://img.icons8.com/?size=100&id=CVI48dqUAQYO&format=png&color=000000" alt="whatsapp"> </a> 
+        <a> <img src="https://img.icons8.com/?size=100&id=80593&format=png&color=000000" alt="instagram"> </a>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bytesized&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: tektur, sans-serif;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 0 10px;
+            color: white;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDNwZWphNjRiNGQxdDg1NDRxNXNzbzFtMzBzZHJjbXI3MWM4b3YxZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/BHNfhgU63qrks/giphy.gif")  ;
+            background-position: center;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .wrapper {
+            width: 490px;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid #ffffff80;
+            backdrop-filter: blur(8px);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .input-field {
+            position: relative;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .input-field label {
+            position: absolute;
+            color: #fff;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 16px;
+            pointer-events: none;
+            transition: 0.15s ease;
+        }
+
+        .input-field input {
+            width: 100%;
+            height: 40px;
+            color: #fff;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .input-field input:focus ~ label,
+        .input-field input:valid ~ label {
+            top: 10px;
+            font-size: 0.8rem;
+            transform: translateY(-120%);
+        }
+
+        .forget {
+            display: flex;
+            align-items: center;
+            margin: 25px 0 35px 0;
+            justify-content: space-between;
+            color:#fff;
+        }
+
+        #remember {
+            accent-color: #fff;
+        }
+
+        .forget label {
+            display: flex;
+            align-items: center;
+        }
+
+        .forget label p {
+            margin-left: 8px;
+        }
+
+        .wrapper a {
+            color: #efefef;
+            text-decoration: underline;
+        }
+
+        button {
+            background: #fff;
+            color: #000;
+            font-weight: 600;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 16px;
+            border: 2px solid transparent;
+            transition: 0.3s ease;
+        }
+
+        .register {
+            text-align: center;
+            margin-top: 30px;
+            color: #fff;
+        }
+
+
+        .tektur-<uniquifier> {
+                     font-family: "Tektur", sans-serif;
+                     font-optical-sizing: auto;
+                     font-weight: <weight>;
+                     font-style: normal;
+                     font-variation-settings:
+                             "wdth" 100;
+                 }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <form id="loginForm" >
+        <h2>Welcome to Login Page</h2>
+
+        <div class="Role">
+            <label for="choices">Login As</label>
+            <select id="choices" name="role" required>
+                <option value="ADMIN">Admin</option>
+                <option value="INSTRUCTOR">Instructor</option>
+                <option value="STUDENT">Student</option>
+            </select>
+        </div>
+
+        <div class="input-field">
+            <input type="email" id="email" required>
+            <label for ="email">Enter your email</label>
+        </div>
+        <div class="input-field">
+            <input type="password" id="password" required>
+            <label for ="password">Enter your password</label>
+        </div>
+        <div class="forget">
+            <label for="remember">
+                <input type="checkbox" id="remember">
+                <p>Remember me</p>
+            </label>
+            <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit">Login</button>
+        <div class="register">
+            <p>Don't have an account?
+                <a href="register.html">Sign up</a>
+            </p>
+        </div>
+    </form>
+</div>
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("loginForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const role = document.getElementById("choices").value;
+
+
+            console.log("🔍 Login data:", { email, password, role });
+
+            if (!email || !password || !role) {
+                alert("All fields are required.");
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:8080/auth/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ email, password, role })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem("jwtToken", data.token);
+                    alert("Login successful!");
+                    window.location.href = data.redirect;
+                } else {
+                    alert(data.error || "Login failed");
+                    console.log("❌ Login Response:", data);
+                }
+
+            } catch (error) {
+                console.error("🚨 Login error:", error);
+                alert("Something went wrong");
+            }
+        });
+    });
+</script>
+</body>
+</html>
